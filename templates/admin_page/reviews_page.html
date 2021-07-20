@@ -1,0 +1,88 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+
+    </title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static "admin/index.css" %}">
+</head>
+<body>
+    <header>
+        <div class="header">
+            <ul>
+                <li>
+                    <a href="{% url "admin_control_page" %}">
+                        Заявки
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url "admin_reviews_page" %}">
+                        Отзывы
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url "admin_payment_page" %}">
+                        Оплата
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url "admin_certificates_page" %}">
+                        Онлайн сертификаты
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url "admin_aboniment_page" %}">
+                        Абонименты
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url "workers" %}">
+                        Спецалисты
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <div class="table">
+        <div class="table_in_box">
+            <table border="1">
+                <tr>
+                    <th class="name">Имя</th>
+                    <th class="phone_number">email</th>
+                    <th class="message">Отзыв</th>
+                    <th class="status">Статус</th>
+                </tr>
+                {% for review in reviews_list%}
+                    <tr>
+                        <td>{{ review.name }}</td>
+                        <td>{{ review.email }}</td>
+                        <td>{{ review.review }}</td>
+                        <td>
+                            <div class="certificate_admin_status">
+                                <div class="status_status">
+                                {{ review.status }}
+                            </div>
+                            {% if review.status == 'Новый' %}
+                            <div class="close_certificate">
+                                <a href="update/{{ review.id_review }}">
+                                    Сохранить
+                                </a>
+                            </div>
+                            <div class="delete_certificate">
+                                <a href="delete/{{ review.id_review }}">
+                                    Удалить
+                                </a>
+                            </div>
+                            {% endif %}
+                            </div>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+
+    </title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static "admin/index.css" %}">
+</head>
+<body>
+    {% if certificates_list %}
+        {% for certificate in certificates_list %}
+            <div class="certificate">
+                {{ certificate.certificate_image }}
+                {{ certificate.certificate_name }}
+                <form action="{{ certificate.id_certificate }}/" method="get">
+                    {% csrf_token %}
+                    <input type="submit" value="enter">
+                </form>
+            </div>
+        {% endfor %}
+    {% endif %}
+</body>
+</html>

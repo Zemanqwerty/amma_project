@@ -1,0 +1,37 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <header>
+        <meta charset="UTF-8">
+    </header>
+    <body>
+        <div class="wrapper">
+            <div class="zeman_serv_email_text" style="text-align: center;
+	background-color: #B292C7;
+	color: #323232;
+	font-size: 26px;
+    padding-top: 40px;
+    padding-bottom: 40px;">
+                <div class="zeman_serv_email_text_block" style="width: 100%; padding-bottom: 10px; padding-top: 10px; display: flex; justify-content: center; align-items: center; background-color: #FFDDA6">
+                    Здравствуйте, {{ name }}!
+                </div>
+                <br>
+                <br>
+                Благодарим вас за приобретение услуги "{{ serv }}".
+                <br>
+                <br>
+                Стоимость услуги - {{ price }}р.
+                <br>
+                <br>
+                Длительность - {{ time }} минут.
+                <br>
+                <br>
+                <div class="zeman_serv_email_text_block" style="width: 100%; padding-bottom: 10px; padding-top: 10px; display: flex; justify-content: center; align-items: center; background-color: #FFDDA6">
+                    Спасибо за покупку!
+                </div>
+
+            </div>
+        </div>
+    </body>
+</html>

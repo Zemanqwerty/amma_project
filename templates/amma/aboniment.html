@@ -1,0 +1,159 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>СЕРТИФИКАТ</title>
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
+
+
+	  <script src="https://kit.fontawesome.com/2ca39b2682.js" crossorigin="anonymous"></script>
+</head>
+<body>
+	<div class="mask">
+		<div class="loader">
+			<div class="loading">
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+		</div>
+	</div>
+
+
+	<header>
+		<div class="bolo">
+			<div class="nomber">
+				<p><i class="fas fa-phone-alt"></i> 8(3952)67-63-09, 8(904)1-57-63-09 </p>
+			</div>
+			<div class="logo">
+				<a href="index.html"><img class="graficlogo" src="{% static 'img/logo.png' %}" alt="Logo"></a>
+			</div>
+		</div>
+
+		<nav>
+			<div class="topnav" id="myTopnav">
+				<a href="{% url 'index_page' %}">Главная</a>
+				<a href="{% url 'prices_page' %}">Услуги и цены</a>
+				<a href="{% url 'gallery_page' %}">Фотогалерея</a>
+				<a href="{% url 'reviews' %}">Отзывы</a>
+				<a href="{% url 'appli_online_page' %}">Запись Онлайн</a>
+				<a href="{% url 'workers_page' %}">Наши специалисты</a>
+                <a href="{% url 'actions_page' %}">Активные акции</a>
+				<a id="menu" href="#" class="icon">&#9776;</a>
+			</div>
+		</nav>
+	</header>
+
+
+<main>
+
+<div class="cert_content">
+			<div class="prise_services" style="margin-top: 45px;">
+				<div class="wpb_wrapper">
+					 <div class="vc_row">
+					 	<h1 style="text-align: center; margin-top: 10px;">
+					 		ПОДАРОЧНЫЕ СЕРТИФИКАТЫ
+					 	</h1>
+					 </div>
+					 <div class="wpb_row">
+					 	<p>Подарочный сертификат в АММА SPA – это роскошный и чувственный подарок на любой праздник!</p>
+					 	<br>
+					 	<p>У нас Вы можете купить оригинальный подарок в виде подарочного сертификата на SPA-программы с посещением хаммама и соляной пещеры ориентируясь на характер, настроение и предпочтения получателя!</p>
+					 	<br>
+					 	<p>Вас приятно удивит наша уникальная атмосфера, исключительный сервис и разнообразие услуг!</p>
+					 	<br>
+					 	<p>Лучший подарок любимым — это забота о них!</p>
+					 	<br>
+					 	<p>Вы можете приобрести сертификат на любую удобную Вам сумму или на любой из видов массажа и SPA-программ. Это позволит гостю SPA-центра выбрать именно тот SPA-уход или массаж, который приходится ему по вкусу!</p>
+					 	<p>ДАРИТЕ С УДОВОЛЬСТВИЕМ!</p>
+					 </div>
+
+					 <div class="vc_inner">
+					 	<div class="vcinner_img">
+					 	</div>
+
+					 	<div class="vcinner_img">
+					 		<h2>Абонемент на массаж и SPA процедуры со скидкой 10%
+                                <br>15000 руб.</h2>
+					 		<img src="{% static 'img/ab1.jpg' %}" alt="">
+					 		<div class="button_certificat">
+					 	<a href="/aboniments/1" class="double-border-button">Купить</a>
+					 </div>
+					 	</div>
+
+					 	<div class="vcinner_img">
+
+					 	</div>
+
+					 </div>
+
+
+
+
+
+					<div class="vc_inner">
+						<div class="vcinner_img">
+							<h2>Абонемент на массаж и SPA процедуры со скидкой 20%
+                                <br>25000 руб.</h2>
+							<img src="{% static 'img/ab2.jpg' %}" alt="">
+							<a href="/aboniments/2" class="double-border-button">Купить</a>
+					 	</div>
+
+					 	<div class="vcinner_img">
+					 		<h2>Абонемент на массаж и SPA процедуры со скидкой 25%
+                                <br>35000 руб.</h2>
+					 		<img src="{% static 'img/ab3.jpg' %}" alt="">
+					 		<a href="/aboniments/3" class="double-border-button">Купить</a>
+					 	</div>
+					 	<div class="vcinner_img">
+					 		<h2>Абонемент на массаж и SPA процедуры со скидкой 30%
+                                <br>50000 руб.</h2>
+					 		<img src="{% static 'img/ab4.jpg' %}" alt="">
+					 		<a href="/aboniments/4" class="double-border-button">Купить</a>
+					 	</div>
+					</div>
+
+
+
+
+					<div class="wpb_row">
+						<p>Мы уверены — наши клиенты достойны самого лучшего и качественного сервиса!</p>
+						<p>Наши мастера – лучшие массажистки из  luxury-spa острова Бали проведут процедуру на самом высоком уровне!</p>
+						<p>С Любовью, ваш АММА SPA.</p>
+					</div>
+
+				</div>
+
+
+        	</div>
+  </div>
+
+</main>
+	<footer>
+		<nav>
+			<div class="bottomnav">
+				<a href="index.html">Главная</a>
+				<a href="services.html">Услуги и цены</a>
+				<a href="gallery.html">Фотогалерея</a>
+				<a href="testimonials.html">Отзывы</a>
+				<a href="appointment.html">Запись Онлайн</a>
+			</div>
+		</nav>
+		<div class="container_footer">
+			<p>© 2018 АММА СПА-Центр. Все права защищены.</p>
+			<a href=""><p>Политика конфиденциальности</p></a>
+		</div>
+
+
+	</footer>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+	<script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>

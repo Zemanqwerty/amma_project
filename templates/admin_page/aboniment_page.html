@@ -1,0 +1,72 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+
+    </title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static "admin/index.css" %}">
+</head>
+<body>
+    <header>
+        <div class="header">
+            <ul>
+                <li>
+                    <a href="{% url "admin_control_page" %}">
+                        Заявки
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url "admin_reviews_page" %}">
+                        Отзывы
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url "admin_payment_page" %}">
+                        Оплата
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url "admin_certificates_page" %}">
+                        Онлайн сертификаты
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url "admin_aboniment_page" %}">
+                        Абонименты
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url "workers" %}">
+                        Спецалисты
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <div class="table">
+        <div class="table_in_box">
+            <table border="1">
+                <tr>
+                    <th class="number">Номер</th>
+                    <th class="name">Вид абонемента</th>
+                    <th class="phone_number">email</th>
+                    <th class="sum">Сумма</th>
+                    <th class="category">Имя</th>
+                </tr>
+                {% for aboniment in aboniment_list%}
+                <tr>
+                    <td>{{ aboniment.aboniment_number }}</td>
+                    <td>{{ aboniment.aboniment_category }}</td>
+                    <td>{{ aboniment.email }}</td>
+                    <td>{{ aboniment.price }}</td>
+                    <td>{{ aboniment.name }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</body>
+</html>

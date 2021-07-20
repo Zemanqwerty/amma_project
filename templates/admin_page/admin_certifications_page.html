@@ -1,0 +1,87 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+
+    </title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static "admin/index.css" %}">
+</head>
+<body>
+    <header>
+        <div class="header">
+            <ul>
+                <li>
+                    <a href="{% url "admin_control_page" %}">
+                        Заявки
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url "admin_reviews_page" %}">
+                        Отзывы
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url "admin_payment_page" %}">
+                        Оплата
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url "admin_certificates_page" %}">
+                        Онлайн сертификаты
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url "admin_aboniment_page" %}">
+                        Абонименты
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url "workers" %}">
+                        Спецалисты
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <div class="table">
+        <div class="table_in_box">
+            <table border="1">
+                <tr>
+                    <th class="number">Номер</th>
+                    <th class="name">Имя</th>
+                    <th class="phone_number">email</th>
+                    <th class="sum">Сумма</th>
+                    <th class="category">Вид сертификата</th>
+                    <th class="status">Статус</th>
+                </tr>
+                {% for certificate in certificates_list%}
+                <tr>
+                    <td>{{ certificate.certificate_number }}</td>
+                    <td>{{ certificate.name }}</td>
+                    <td>{{ certificate.email }}</td>
+                    <td>{{ certificate.price }}</td>
+                    <td>{{ certificate.certificate_category }}</td>
+                    <td>
+                        <div class="certificate_admin_status">
+                            <div class="status_status">
+                            {{ certificate.status }}
+                        </div>
+                        {% if certificate.status == 'выпущен' %}
+                        <div class="close_certificate">
+                            <a href="{{ certificate.id_certificate }}">
+                                Закрыть
+                            </a>
+                        </div>
+                        {% endif %}
+                        </div>
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</body>
+</html>

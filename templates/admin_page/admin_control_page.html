@@ -1,0 +1,68 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+
+    </title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static "admin/index.css" %}">
+</head>
+<body>
+    <header>
+        <div class="header">
+            <ul>
+                <li>
+                    <a href="{% url "admin_control_page" %}">
+                        Заявки
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url "admin_reviews_page" %}">
+                        Отзывы
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url "admin_payment_page" %}">
+                        Оплата
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url "admin_certificates_page" %}">
+                        Онлайн сертификаты
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url "admin_aboniment_page" %}">
+                        Абонименты
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url "workers" %}">
+                        Спецалисты
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <div class="table">
+        <div class="table_in_box">
+            <table border="1">
+                <tr>
+                    <th class="name">Имя</th>
+                    <th class="phone_number">Номер телефона</th>
+                    <th class="message">Сообщение</th>
+                </tr>
+                {% for application in applications_list%}
+                    <tr>
+                        <td>{{ application.client_name }}</td>
+                        <td>{{ application.client_phone_number }}</td>
+                        <td>{{ application.client_message }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</body>
+</html>

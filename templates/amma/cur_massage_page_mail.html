@@ -1,0 +1,35 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <header>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <title>
+            Оформление заявки на приобретение услуги
+        </title>
+    </header>
+    <body>
+        <div class="cur_form_wrapper">
+            <div class="cur_form_wrapper_form">
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="zeman_serv_information">
+                        {{ serv }}
+                        <br>
+                        <br>
+                        {{ price }}р.
+                        <br>
+                        <br>
+                        {{ time }} {% if time == 1 %}сеанс{% endif %}{% if time == 10 %}сеансов{% endif %}{% if time > 10 %}минут{% endif %}
+                        <br>
+                        <br>
+                    </div>
+                    {{ form.name }}
+                    {{ form.email }}
+                    <input type="submit" value="Оплатить" class="cur_form_wrapper_form_sub">
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,79 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>ammaspa - АММА СПА-Центр</title>
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
+	  <script src="https://kit.fontawesome.com/2ca39b2682.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+	<header>
+		<div class="bolo">
+			<div class="nomber">
+				<p><i class="fas fa-phone-alt"></i> 8(3952)67-63-09, 8(904)1-57-63-09 </p>
+			</div>
+			<div class="logo">
+				<a href="{% url 'index_page' %}"><img class="graficlogo" src="{% static 'img/logo.png' %}" alt="Logo"></a>
+			</div>
+		</div>
+
+		<nav>
+			<div class="topnav" id="myTopnav">
+				<a href="{% url 'index_page' %}">Главная</a>
+				<a href="{% url 'prices_page' %}">Услуги и цены</a>
+				<a href="{% url 'gallery_page' %}">Фотогалерея</a>
+				<a href="{% url 'reviews' %}">Отзывы</a>
+				<a href="{% url 'appli_online_page' %}">Запись Онлайн</a>
+				<a href="{% url 'workers_page' %}">Наши специалисты</a>
+                <a href="{% url 'actions_page' %}">Активные акции</a>
+				<a id="menu" href="#" class="icon">&#9776;</a>
+			</div>
+		</nav>
+	</header>
+
+    <div class="zeman_wrapper">
+        <div class="zeman_wrapper_workers_desc">
+            {% for action in actions_list %}
+                <div class="zeman_worker">
+                    <div class="zeman_worker_wrap" style="">
+                        <div class="zeman_worker_img">
+                            <img src="{{ MEDIA_URL }}{{ action.action_img.url }}" class="zeman_worker_img_class_border">
+                        </div>
+                        <div class="zeman_worker_name">
+                            {{ action.action_name }}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+	<footer>
+		<nav>
+			<div class="bottomnav">
+				<a href="index.html">Главная</a>
+				<a href="services.html">Услуги и цены</a>
+				<a href="gallery.html">Фотогалерея</a>
+				<a href="testimonials.html">Отзывы</a>
+				<a href="appointment.html">Запись Онлайн</a>
+                <a href="{% url 'workers_page' %}">Наши специалисты</a>
+			</div>
+		</nav>
+		<div class="container_footer">
+			<p>© 2018 АММА СПА-Центр. Все права защищены.</p>
+			<a href=""><p>Политика конфиденциальности</p></a>
+		</div>
+
+
+	</footer>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+	<script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>

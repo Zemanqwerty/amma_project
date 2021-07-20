@@ -1,0 +1,22 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <header>
+        <meta charset="UTF-8">
+    </header>
+    <body>
+        <div class="wrapper">
+            {% for c in certificate %}
+                <div class="certificate_background" style="background-color: #b11414; width: 400px; height: 400px;">
+                    <div class="wrapper" style="font-size: 30px; color: #9092D2; text-align: center;">
+                        {{ name }}<br>
+                        {{ c.price }}<br>
+                        № - {{ number }}<br>
+                        <img src="http://127.0.0.1:8000{% static 'img/logo.png' %}" alt="#">
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </body>
+</html>

@@ -1,0 +1,91 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+
+    </title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static "admin/index.css" %}">
+</head>
+<body>
+    <header>
+        <div class="header">
+            <ul>
+                <li>
+                    <a href="{% url "admin_control_page" %}">
+                        Заявки
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url "admin_reviews_page" %}">
+                        Отзывы
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url "admin_payment_page" %}">
+                        Оплата
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url "admin_certificates_page" %}">
+                        Онлайн сертификаты
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url "admin_aboniment_page" %}">
+                        Абонименты
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url "workers" %}">
+                        Спецалисты
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url "actions" %}">
+                        Акции
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <div class="table">
+        <div class="table_in_box">
+            <table border="1">
+                <tr>
+                    <th class="img">Фото</th>
+                    <th class="name">Название</th>
+                    <th class="control">Управление</th>
+                </tr>
+                {% if actions_list %}
+                    {% for action in actions_list %}
+                        <tr>
+                            <td><img src="{{ MEDIA_URL }}{{ action.action_img.url }}" style="width: 300px"></td>
+                            <td>{{ action.action_name }}</td>
+                            <td class="delete_cert_td">
+                                <div class="delete_certificate work">
+                                    <a href="actions_delete/{{ action.id_action }}" style="text-align: center">
+                                        Удалить
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    {% else %}
+                        null
+                {% endif %}
+                <tr>
+                    <form method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <th class="img">{{ form.action_img }}</th>
+                        <th class="name">{{ form.action_name }}</th>
+                        <th class="control"><input type="submit" value="Добавить" class="worker_add"></th>
+                    </form>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

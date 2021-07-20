@@ -1,0 +1,148 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>ammaspa - АММА СПА-Центр</title>
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
+	
+
+	  <script src="https://kit.fontawesome.com/2ca39b2682.js" crossorigin="anonymous"></script>
+</head>
+<body>
+	<div class="mask">
+		<div class="loader">
+			<div class="loading">
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+		</div>
+	</div>
+  
+
+	<header>
+		<div class="bolo"> 
+			<div class="nomber">
+				<p style="color: azure;"><i class="fas fa-phone-alt"></i> 8(3952)67-63-09, 8(904)1-57-63-09 </p>
+			</div>
+			<div class="logo">
+				<a href="{% url 'index_page' %}"><img class="graficlogo" src="{% static 'img/logo.png' %}" alt="Logo"></a>
+			</div>
+		</div>
+
+		<nav>
+			<div class="topnav" id="myTopnav">
+				<a href="{% url 'index_page' %}">Главная</a>
+				<a href="{% url 'prices_page' %}">Услуги и цены</a>
+				<a href="{% url 'gallery_page' %}">Фотогалерея</a>
+				<a href="{% url 'reviews' %}">Отзывы</a>
+				<a href="{% url 'appli_online_page' %}">Запись Онлайн</a>
+				<a href="{% url 'workers_page' %}">Наши специалисты</a>
+                <a href="{% url 'actions_page' %}">Активные акции</a>
+				<a id="menu" href="#" class="icon">&#9776;</a>
+			</div>
+		</nav>
+	</header>
+
+
+<main>
+
+        <div id="slider">
+            <img src="{% static 'img/ph1.jpg' %}" alt="#"  class="mx-100" style="overflow: hidden; width:100%">
+           <img src="{% static 'img/ph2.jpg' %}" alt="#"  class="mx-100" style="overflow: hidden; width:100%">
+           <img src="{% static 'img/ph3.jpg' %}" alt="#" class="mx-100" style="overflow: hidden; width:100%">
+          <img src="{% static 'img/ph4.jpg' %}" alt="#" class="mx-100" style="overflow: hidden; width:100%">
+        </div>
+
+        <div class="content">
+        	<div class="description">
+        		<p><i>АММА SPA – это уникальная вселенная красоты и здоровья, которая поможет вам перенестись из городских джунглей в удивительный мир отдыха и расслабления.</i></p>
+        		<p>В нашем SPA-центре Вас ожидает атмосфера гармонии и умиротворения, которая позволит Вам насладиться роскошными SPA-программами не покидая мегаполис. А наши опытные специалисты с острова Бали проведут процедуру на высочайшем уровне!</p>
+        		<p>Для Вас представлен широкий выбор массажей и Spa-программ на любой вкус: Балийский массаж, массаж с арома-маслами, массаж в технике ломи-ломи или шиацу, массаж горячими камнями или травяными мешочками, программы для коррекции фигуры, массажи и уходы для лица, комплексные Spa-программы и уходы, и много другое.</p>
+        		<p>Вы можете погреться в настоящем Турецком хаммаме или посетить невероятно полезную по своим свойствам Соляную пещеру.</p>
+        		<p>Если Вы хотите обрести гармонию чувств, посетите наши чудесные SPA-программы для двоих, которые позволят вам незабываемо провести время с любимым человеком.</p>
+        		<p>А подарочный сертификат в АММА SPA — это уникальная идея шикарного подарка на любой праздник.</p>
+        		<p>Ждем Вас!</p>
+        		<p>С Любовью, АММА SPA</p>
+        	</div>
+
+        	<div class="prise_container">
+        		<div class="prise">
+
+
+                    <a href="{% url 'massages_page' %}" class="prise_items">
+                        <img class="size_price_img" src="{% static 'img/massage.png' %}" alt="" >
+                        <h3>МАССАЖИ</h3>
+                    </a>
+        			<a href="{% url 'spa_page' %}" class="prise_items">
+        				<img class="size_price_img" src="{% static 'img/massage-spa-body-treatment.png' %}" alt="" >
+        				<h3>SPA-УХОДЫ</h3>
+        			</a>
+        			<a href="{% url 'spa_for_two_page' %}" class="prise_items">
+        				<img class="size_price_img" src="{% static 'img/table-and-two-chairs-set-for-back-yard.png' %}" alt="" >
+        				<h3>SPA-УХОДЫ ДЛЯ ДВОИХ</h3>
+        			</a>
+        			<a href="{% url 'certificates_page' %}" class="prise_items">
+        				<img class="size_price_img" src="{% static 'img/certificate.png' %}" alt="" >
+        				<h3>СЕРТИФИКАТ В ПОДАРОК</h3>
+        			</a>
+                    <a href="{% url 'appli_online_page' %}" class="prise_items">
+        				<img class="size_price_img" src="{% static 'img/certificate.png' %}" alt="" >
+        				<h3>ЗАПИСАТЬСЯ ОНЛАЙН</h3>
+        			</a>
+        		</div>
+        	</div>
+
+        	<div class="geolocation">
+        			<h1 style="text-align: center;">Контактная информация</h1>
+        			<div class="contactad">
+        				<p>Наш адрес: г.Иркутск, ул. Александра Невского 3Б.</p>
+        				<p>Телефоны: 8(3952)67-63-09, 8(904)1-57-63-09</p>
+        				<p>e-mail: ammaspacenter@gmail.com</p>
+        			</div>
+
+        		<div class="geo_content">
+        			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1026.3238646719262!2d104.30796061716796!3d52.2792792522616!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5da83b41dda90a51%3A0xb1930ab9793471d5!2z0YPQuy4g0JDQu9C10LrRgdCw0L3QtNGA0LAg0J3QtdCy0YHQutC-0LPQviwgM9CxLCDQmNGA0LrRg9GC0YHQuiwg0JjRgNC60YPRgtGB0LrQsNGPINC-0LHQuy4sIDY2NDA0Nw!5e0!3m2!1sru!2sru!4v1624603985317!5m2!1sru!2sru" width="90%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        		</div>
+        	</div>
+
+            <div class="auer_certificates">
+                <div class="left_cert">
+                    <img src="{% static 'img/left_cert.jpg' %}" alt="" style="height: 100%;">
+                </div>
+                <div class="right_cert">
+                    <img src="{% static 'img/right_cert.jpg' %}" alt="" style="height: 100%;">
+                </div>
+                </div>
+            </div>
+        </div>
+</main>
+	<footer>
+		<nav style="padding-bottom: 30px;">
+			<div class="bottomnav">
+				<a href="index.html">Главная</a>
+				<a href="services.html">Услуги и цены</a>
+				<a href="gallery.html">Фотогалерея</a>
+				<a href="testimonials.html">Отзывы</a>
+				<a href="appointment.html">Запись Онлайн</a>
+                <a href="{% url 'workers_page' %}">Наши специалисты</a>
+			</div>
+		</nav>
+		<div class="container_footer">
+			<p>© 2018 АММА СПА-Центр. Все права защищены.</p>
+			<a href=""><p>Политика конфиденциальности</p></a>
+		</div>
+
+
+	</footer>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+	<script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>
