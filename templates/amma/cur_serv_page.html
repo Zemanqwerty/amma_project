@@ -127,11 +127,13 @@
 	<footer>
 		<nav>
 			<div class="bottomnav">
-				<a href="index.html">Главная</a>
-				<a href="services.html">Услуги и цены</a>
-				<a href="gallery.html">Фотогалерея</a>
-				<a href="testimonials.html">Отзывы</a>
-				<a href="appointment.html">Запись Онлайн</a>
+				<a href="{% url 'index_page' %}">Главная</a>
+				<a href="{% url 'prices_page' %}">Услуги и цены</a>
+				<a href="{% url 'gallery_page' %}">Фотогалерея</a>
+				<a href="{% url 'reviews' %}">Отзывы</a>
+				<a href="{% url 'appli_online_page' %}">Запись Онлайн</a>
+				<a href="{% url 'workers_page' %}">Наши специалисты</a>
+                <a href="{% url 'actions_page' %}">Активные акции</a>
 			</div>
 		</nav>
 		<div class="container_footer">

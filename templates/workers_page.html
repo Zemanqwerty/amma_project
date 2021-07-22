@@ -39,14 +39,17 @@
 
     <div class="zeman_wrapper">
         <div class="zeman_wrapper_workers_desc">
-            {% for action in actions_list %}
+            {% for worker in workers_list %}
                 <div class="zeman_worker">
                     <div class="zeman_worker_wrap" style="">
                         <div class="zeman_worker_img">
-                            <img src="{{ MEDIA_URL }}{{ action.action_img.url }}" class="zeman_worker_img_class_border">
+                            <img src="{{ MEDIA_URL }}{{ worker.worker_img.url }}" class="zeman_worker_img_class_border">
                         </div>
                         <div class="zeman_worker_name">
-                            {{ action.action_name }}
+                            {{ worker.worker_name }}
+                        </div>
+                        <div class="zeman_worker_desc">
+                            {{ worker.worker_desc }}
                         </div>
                     </div>
                 </div>
@@ -57,13 +60,12 @@
 	<footer>
 		<nav>
 			<div class="bottomnav">
-				<a href="{% url 'index_page' %}">Главная</a>
-				<a href="{% url 'prices_page' %}">Услуги и цены</a>
-				<a href="{% url 'gallery_page' %}">Фотогалерея</a>
-				<a href="{% url 'reviews' %}">Отзывы</a>
-				<a href="{% url 'appli_online_page' %}">Запись Онлайн</a>
-				<a href="{% url 'workers_page' %}">Наши специалисты</a>
-                <a href="{% url 'actions_page' %}">Активные акции</a>
+				<a href="index.html">Главная</a>
+				<a href="services.html">Услуги и цены</a>
+				<a href="gallery.html">Фотогалерея</a>
+				<a href="testimonials.html">Отзывы</a>
+				<a href="appointment.html">Запись Онлайн</a>
+                <a href="{% url 'workers_page' %}">Наши специалисты</a>
 			</div>
 		</nav>
 		<div class="container_footer">
